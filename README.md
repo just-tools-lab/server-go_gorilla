@@ -4,14 +4,6 @@
 
 [Libraries](#libraries)
 
-    Router - Gorilla
-	logging - Zap
-	Authentication
-	Database
-		ORM -
-		ODM - MongoDb driver
-	Live Reloading - Air
-
 [Go Workspaces](#go-workspaces)
 
 [NOTE](#note)
