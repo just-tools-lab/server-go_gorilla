@@ -1,0 +1,52 @@
+version: "2"
+
+linters:
+    enable:
+        - errcheck      # Checks unhandled errors
+        - govet         # Standard Go vet tool
+        - staticcheck   # Advanced static analysis
+        - gosec         # Security scanner for Go code
+        - bodyclose     # Checks if HTTP response bodies are closed
+        - noctx         # Finds HTTP requests without context.Context
+        - revive        # Flexible and fast linter
+        - unused        # Checks for unused constants, variables, functions and types
+        - unparam       # Reports unused function parameters
+        - misspell      # Finds commonly misspelled English words
+        - prealloc      # Finds slice declarations that could potentially be pre-allocated
+
+    settings:
+        govet:
+            check-shadowing: true
+        gosec:
+            excludes:
+                - G104 #Duplicate of errcheck
+        revive:
+            rules:
+                - name: exported
+                - name: package-comments
+                - name: blank-imports
+        bodyclose:
+            check-consumption: true
+        cyclop:
+            max-complexity: 10
+            package-average: 0.5
+        unparam:
+            check-exported: false
+formatters:
+    enable:
+        - gci
+    - gofmt
+    - gofumpt
+    - goimports
+    - golines
+    - swaggo
+
+    settings:
+
+issues:
+    exclude-use-default: false
+    max-issue-per-linter: 0
+    max-same-issues: 0
+output:
+run:
+severity:
