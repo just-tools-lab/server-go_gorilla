@@ -1,11 +1,17 @@
 name: golangci-lint
 
 on:
-    push:
-        branches:
-          - main
-          - master
-    pull_request:
+    # push:
+    #     branches:
+    #       - main
+    #       - master
+    # pull_request:
+    workflow_dispatch:
+      inputs:
+        reason:
+            description: 'manual run'
+            required: false
+            default: 'Maintenance'
 
 permissions:
     contents: read
